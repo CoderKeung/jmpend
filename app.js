@@ -38,7 +38,7 @@ app.get('/deal', (req, res) => {
 
 })
 app.get("/download", (req, res) => {
-  let docxFile = `${__dirname}/../docx/${req.query.id}.docx`
+  let docxFile = `${__dirname}/docx/${req.query.id}.docx`
   res.download(docxFile)
 })
 
