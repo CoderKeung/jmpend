@@ -2,6 +2,7 @@ const Axios = require("axios");
 const Cheerio = require("cheerio");
 const Docx = require("docx");
 const Fs = require("fs");
+const Database = require("./database");
 
 class Util {
 
@@ -87,6 +88,7 @@ class Conversion {
           await this.initializationArticleData().then(()=>{
             this.createDocument().then(()=>{
               this.DOCXFILEPATH = `${this.DOCXPATH}/${this.ARTICLE.id}.docx`;
+              Database.addArticleList(this.ARTICLE);
               this.SUCCESS = true;
               this.printDocxLog();
             })
