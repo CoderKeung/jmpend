@@ -1,4 +1,4 @@
 docx/
 node_modules/
 .idea/
-database.db
+database/
